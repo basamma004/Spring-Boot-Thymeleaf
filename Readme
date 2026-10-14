@@ -1,0 +1,117 @@
+# Spring Boot Thymeleaf CRUD Application
+
+## Overview
+
+This is a simple CRUD web application built using Spring Boot, Thymeleaf, Spring Data JPA, and MySQL.
+
+The application allows users to enter student details through a web form and view the stored student records in a table.
+
+## Technologies Used
+
+- Java
+- Spring Boot
+- Spring MVC
+- Spring Data JPA
+- Thymeleaf
+- MySQL
+- HTML
+- Maven
+
+## Features
+
+- Insert student details
+- Store student data in MySQL
+- View all student records
+- Thymeleaf-based frontend
+- Simple MVC architecture
+
+## Frontend Pages
+
+### 1. Insert Page
+
+The `insert.html` page contains a form where the user can enter:
+
+- Student ID
+- Student Name
+
+The form sends the data to the `/insert` endpoint using the POST method.
+
+### 2. View Page
+
+The `view.html` page displays the student records in a table.
+
+The data is displayed dynamically using Thymeleaf:
+
+```html
+<tr th:each="a:${data}">
+    <td th:text="${a.sid}"></td>
+    <td th:text="${a.sname}"></td>
+</tr>
+```
+
+## Project Structure
+
+```text
+src
+└── main
+    ├── java
+    │   └── com.example.project
+    │       ├── controller
+    │       ├── entity
+    │       ├── repository
+    │       └── service
+    │
+    └── resources
+        ├── templates
+        │   ├── insert.html
+        │   └── view.html
+        │
+        └── application.properties
+```
+
+## CRUD Operation
+
+This project currently demonstrates the basic:
+
+- **Create** – Insert student details
+- **Read** – View student details
+
+Update and Delete operations can be added later to make it a complete CRUD application.
+
+## Database
+
+The project uses MySQL for storing student information.
+
+Example database:
+
+```sql
+CREATE DATABASE student_db;
+```
+
+Configure the database connection in `application.properties`:
+
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/student_db
+spring.datasource.username=root
+spring.datasource.password=your_password
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+```
+
+## How to Run
+
+1. Clone the repository.
+2. Open the project in Eclipse, IntelliJ IDEA, or VS Code.
+3. Create the MySQL database.
+4. Configure `application.properties`.
+5. Run the Spring Boot application.
+6. Open the application in a browser.
+
+```text
+http://localhost:8080
+```
+
+## Purpose
+
+This project was created to practice Spring Boot, Thymeleaf, Spring MVC, Spring Data JPA, MySQL, and basic database operations.
