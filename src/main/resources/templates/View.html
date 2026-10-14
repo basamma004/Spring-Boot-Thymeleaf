@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<table border="">
+<tr>
+<th>id</th>
+<th>name</th>
+</tr>
+<tr th:each="a:${data}">
+<td th:text="${a.sid}"></td>
+<td th:text="${a.sname}"></td>
+</tr>
+
+</table>
+</body>
+</html>
+
